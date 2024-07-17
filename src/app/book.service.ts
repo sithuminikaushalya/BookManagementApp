@@ -14,7 +14,7 @@ export class BookService {
   }
 
   addBook(book: Book) {
-    book.id = this.books.length + 1; 
+    book.id = this.books.length ? this.books[this.books.length - 1].id + 1 : 1;
     this.books.push(book);
   }
 
