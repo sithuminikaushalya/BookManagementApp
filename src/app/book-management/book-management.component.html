@@ -1,0 +1,18 @@
+<div>
+    <h2>Book Management</h2>
+    <form (ngSubmit)="onSubmit()">
+        <input [(ngModel)]="currentBook.title" name="title" placeholder="Title" required>
+        <input [(ngModel)]="currentBook.author" name="author" placeholder="Author" required>
+        <input [(ngModel)]="currentBook.isbn" name="isbn" placeholder="ISBN" required>
+        <input [(ngModel)]="currentBook.publicationDate" name="publicationDate" type="date" required>
+        <button type="submit">{{ isEditing ? 'Update' : 'Add' }} Book</button>
+    </form>
+
+    <ul>
+        <li *ngFor="let book of books">
+            {{ book.title }} by {{ book.author }}
+            <button (click)="editBook(book)">Edit</button>
+            <button (click)="deleteBook(book.id)">Delete</button>
+        </li>
+    </ul>
+</div>
