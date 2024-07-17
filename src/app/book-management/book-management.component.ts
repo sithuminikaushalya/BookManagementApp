@@ -16,7 +16,9 @@ export class BookManagementComponent implements OnInit {
 
   ngOnInit() {
     this.loadBooks();
-  }
+    console.log('Loaded books:', this.books);
+}
+
 
   loadBooks() {
     this.books = this.bookService.getBooks();

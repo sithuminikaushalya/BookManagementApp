@@ -5,13 +5,16 @@ import { Book } from './book.model';
   providedIn: 'root'
 })
 export class BookService {
-  private books: Book[] = [];
+  private books: Book[] = [
+    { id: 1, title: 'Sample Book', author: 'Author Name', isbn: '123456', publicationDate: new Date() }
+  ];
 
   getBooks(): Book[] {
     return this.books;
   }
 
   addBook(book: Book) {
+    book.id = this.books.length + 1; 
     this.books.push(book);
   }
 

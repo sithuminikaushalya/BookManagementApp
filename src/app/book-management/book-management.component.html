@@ -1,5 +1,6 @@
 <div>
     <h2>Book Management</h2>
+    <p>This is a test paragraph to check visibility.</p>
     <form (ngSubmit)="onSubmit()">
         <input [(ngModel)]="currentBook.title" name="title" placeholder="Title" required>
         <input [(ngModel)]="currentBook.author" name="author" placeholder="Author" required>
@@ -14,5 +15,6 @@
             <button (click)="editBook(book)">Edit</button>
             <button (click)="deleteBook(book.id)">Delete</button>
         </li>
+        <li *ngIf="books.length === 0">No books available.</li>
     </ul>
 </div>
